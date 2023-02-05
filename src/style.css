@@ -28,7 +28,7 @@ body {
 
 .btn:hover{
     background-color: #f93c3c;
-    font-size: 22px;
+    /* font-size: 22px; */
 }
 
 .btn:active {

@@ -10,6 +10,7 @@ import CardButton from "./CardButton"
 const style = {
     popUpContainer: {
         position: "fixed",
+        top: "-0.01%",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         height: "100%",
         width: "100%",
