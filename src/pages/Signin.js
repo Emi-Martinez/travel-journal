@@ -15,7 +15,7 @@ const style = {
     }
 }
 
-export default function Singin(){
+export default function Signin(){
     const navigate = useNavigate()
     const session = useSelector((state) => state.user.session)
     const dispatch = useDispatch()
