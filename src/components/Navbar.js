@@ -1,4 +1,7 @@
 import Img from "./Image"
+import User from "./User"
+import { useSelector } from "react-redux"
+import Alert from "./Alert"
 
 const style = {
     navBar: {
@@ -17,10 +20,15 @@ const style = {
 }
 
 export default function Navbar(){
+    const session = useSelector((state) => state.user.session)
+    const alert = useSelector((state) => state.alert)
+
     return(
         <div style={style.navBar}>
+            {alert.toggle && <Alert message={alert.message} />}
             <Img src="./img/world.png" />
             <h2 style={style.title}>My travel journal</h2>
+            {session && <User userImg={session.photoURL}/>}            
         </div>
     )
 }

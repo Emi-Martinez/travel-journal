@@ -14,6 +14,7 @@ const style = {
     labelImg:{
         marginRight: "5px",
     }
+    
 }
 
 export default function customImage(props){

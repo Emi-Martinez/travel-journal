@@ -5,6 +5,7 @@ import Input from "./Input"
 const style = {
     container: {
         width: "30%",
+        height: "100%",
         textAlign: "center",
         position: "relative", 
     },

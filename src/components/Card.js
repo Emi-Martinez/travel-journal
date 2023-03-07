@@ -1,7 +1,8 @@
-import { useDispatch } from "react-redux"
-import { popUpActions } from "../store/popUp-slice"
+import { useDispatch, useSelector } from "react-redux"
+import { popUpLoadLocationActions } from "../store/popUpLoadLocation-slice"
 import { locationActions } from "../store/location-slice"
 import { removeLocation } from "../store/location-actions"
+import {testModeRemoveLocation} from "../test/testModeLocation-actions"
 import convertDate from "../util/util"
 import Img from "./Image"
 import Location from "./Location"
@@ -12,7 +13,7 @@ import Desc from "./Description"
 
 const style = {
     card: {
-        width: "470px",
+        width: "35%",
         height: "168px",
         display: "flex",
         marginBottom: "36px",
@@ -31,6 +32,7 @@ const style = {
 
 export default function Card({location}){
     const dispatch = useDispatch()
+    const session = useSelector((state) => state.user.session)
     
     const handleEdit = () => {
         const editLocation = {
@@ -38,12 +40,17 @@ export default function Card({location}){
             dateStar: convertDate(location.dateStar),
             dateFinish: convertDate(location.dateFinish)
         }
+
         dispatch(locationActions.setLocation(editLocation))
-        dispatch(popUpActions.togglePopUp("editLocation"))
+        dispatch(popUpLoadLocationActions.togglePopUp("editLocation")) 
     }
 
     const handleDeleteLocation = () => {
-        dispatch(removeLocation(location))
+        if(session === "test-mode"){
+            dispatch(testModeRemoveLocation(location))
+        }else{            
+            dispatch(removeLocation({...location, email: session.email}))
+        }
     }
 
     return(

@@ -2,6 +2,9 @@ const style = {
     popUp: {
         width: "90%",
         margin: "auto"
+    },
+    mobile:{
+        alignSelf:"center"
     }
 }
 

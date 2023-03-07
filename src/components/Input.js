@@ -1,7 +1,6 @@
 const style = {
     none:{
-        position: "absolute",
-        zIndex: "-1",
+        display:"none"
     }
 }
 
