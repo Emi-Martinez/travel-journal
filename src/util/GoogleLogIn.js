@@ -1,5 +1,5 @@
 import { auth } from '../firebase'
-import { signInWithPopup, GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
 export default async function GoogleLogIn(mode){
     const provider = new GoogleAuthProvider()
@@ -12,6 +12,7 @@ export default async function GoogleLogIn(mode){
             await signInWithRedirect(auth, provider)
         }else {
             const credentials = await signInWithPopup(auth, provider)
+            return credentials
         }  
     } catch (error) {
         
