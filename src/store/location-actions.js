@@ -23,14 +23,18 @@ export const addLocation = (location) => {
         try {
             const locations = await postLocation()
             dispatch(locationsActions.setLocations(locations))
-            console.log("Hace el try seteando las locations.")
 
         } catch (error) {
             if(error.response.status === 400){
                 dispatch(alertActions.activateAlert(error.response.data.errorMessage))
                 setTimeout(()=>{
                     dispatch(alertActions.activateAlert())
-                },8000)
+                },6000)
+            }else{
+                dispatch(alertActions.activateAlert("Something went wrong"))
+                setTimeout(()=>{
+                    dispatch(alertActions.activateAlert())
+                },6000)
             }
         }
     }
@@ -59,7 +63,12 @@ export const updateLocation = (location) => {
                 dispatch(alertActions.activateAlert(error.response.data.errorMessage))
                 setTimeout(()=>{
                     dispatch(alertActions.activateAlert())
-                },8000)
+                },6000)
+            }else{
+                dispatch(alertActions.activateAlert("Something went wrong"))
+                setTimeout(()=>{
+                    dispatch(alertActions.activateAlert())
+                },6000)
             }
         }
     }
@@ -68,7 +77,7 @@ export const updateLocation = (location) => {
 export const removeLocation = (location) => {
     return async (dispatch) => {
         const deleteLocation = async() => {
-            const url = `/api/locations/${location.id}`
+            const url = `/api/locations/${location.id}/${location.email}`
             const {data} = await axios.delete(url)
 
             return data.data
@@ -82,7 +91,12 @@ export const removeLocation = (location) => {
                 dispatch(alertActions.activateAlert(error.response.data.errorMessage))
                 setTimeout(()=>{
                     dispatch(alertActions.activateAlert())
-                },8000)
+                },6000)
+            }else{
+                dispatch(alertActions.activateAlert("Something went wrong"))
+                setTimeout(()=>{
+                    dispatch(alertActions.activateAlert())
+                },6000)
             }
         }
     }
