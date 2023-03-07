@@ -27,7 +27,7 @@ function convertDate(date){
         while (i <= 12) {
             if(month === months[i]){
                 let m = i < 10 ? `0${String(i)}` : i
-                let d = splitDate[0] //(Number(splitDate[0]) < 10 && Number(splitDate[0]) !== 1) ? `${splitDate[0]}` : splitDate[0]
+                let d = splitDate[0]
                 finalDate = `${splitDate[2]}-${m}-${d}`
                 break
             }

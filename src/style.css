@@ -12,6 +12,13 @@ body {
     padding-top: 45px;
 }
 
+.card-container-mobile{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 45px;
+}
+
 .btn {
     width: 200px;
     height: 50px;
@@ -28,7 +35,6 @@ body {
 
 .btn:hover{
     background-color: #f93c3c;
-    /* font-size: 22px; */
 }
 
 .btn:active {
@@ -98,6 +104,31 @@ body {
     animation-direction: alternate;
     animation-fill-mode: forwards;
     animation-iteration-count: 2;
+}
+
+.user-img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-img:hover{
+   border: 2px solid rgba(253, 253, 253, 0.825)
+}
+
+.user-option-btn{
+    font-family: 'Inter', sans-serif;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.user-option-btn:hover{
+    background-color: rgba(0, 0, 0, 0.154);
 }
 
 
