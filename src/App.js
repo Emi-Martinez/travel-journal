@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SharedLayout from "./pages/SharedLayout";
-import Singin from "./pages/Singin";
+import Signin from "./pages/Signin";
 import TravelJournal from "./pages/TravelJournal";
 import "./style.css"
 
@@ -23,7 +23,7 @@ export default function App(){
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<SharedLayout />} >
-                    <Route index element={<Singin />} />
+                    <Route index element={<Signin />} />
                     <Route path="traveljournal" element={<TravelJournal />} />
                 </Route>
             </Routes>
