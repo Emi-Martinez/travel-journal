@@ -41,12 +41,15 @@ export default function TravelJournal(){
               
     },[dispatch, navigate, session])
 
-    const cards = locations.map((location) => (
+    const cards = locations ? locations.map((location) => (
         <Card
             key={location.id}
-            location = {location}
+            location = {{
+                ...location,
+                imageURL: location.imageURL 
+            }}
         />
-    ))
+    )) : []
     
     return(
         <div>
