@@ -55,7 +55,7 @@ export default function Card({location}){
 
     return(
         <div style={style.card}>
-            <Img src={`${process.env.REACT_APP_API_URL}${location.imageURL}`} variant="cardImg" />
+            <Img src={session === "test-mode" ? `${location.imageURL}` : `${process.env.REACT_APP_API_URL}${location.imageURL}`} variant="cardImg" />
             <div style={style.cardDescription}>
                 <div style={style.cardDescTopContent}>
                     <Location 
