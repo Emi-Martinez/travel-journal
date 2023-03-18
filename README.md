@@ -25,10 +25,10 @@ $ npm install
 $ npm start
 ```
 
-## For the log in with Google work out
+## For Google log in to work
 You must create a **firebase project** and add the **authentication feature** to it:
-* create a [firebase-project](https://firebase.google.com/docs/web/setup#create-project)
-* add the [authentication](https://firebase.google.com/docs/auth/web/google-signin#before_you_begin) feature
+* Create a [firebase-project](https://firebase.google.com/docs/web/setup#create-project)
+* Add the [authentication](https://firebase.google.com/docs/auth/web/google-signin#before_you_begin) feature
 * **Copy** your **firebase project api keys** into the file **src/firebase.js**
 
 
