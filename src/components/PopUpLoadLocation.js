@@ -107,7 +107,7 @@ export default function PopUpLoadLocation(){
                         id="img" 
                         disabled={popUpType === "editLocation" ? true : false}
                         onChange={handleChange}
-                        img={location.imageURL}
+                        img={ popUpType ==="editLocation" ? `${process.env.REACT_APP_API_URL}${location.imageURL}` : location.imageURL}
                      />
                     <div style={ responsive ? style.dataContainerMobile : style.dataContainer}>
                         <div style={ responsive ? style.column : style.row }>

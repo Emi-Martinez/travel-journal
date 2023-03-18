@@ -5,7 +5,7 @@ import axios from "axios";
 export const addLocation = (location) => {
     return async (dispatch) => {
         const postLocation = async () => {
-            const url = '/api/locations'
+            const url = `${process.env.REACT_APP_API_URL}/api/locations`
             const {data} = await axios.post(
                 url,
                 location,
@@ -43,7 +43,7 @@ export const addLocation = (location) => {
 export const updateLocation = (location) => {
     return async (dispatch) => {
         const putLocation = async () => {
-            const url = `/api/locations/${location.id}`
+            const url = `${process.env.REACT_APP_API_URL}/api/locations/${location.id}`
             const {data} = await axios.put(url,{
                 updatedLocation: {
                     ...location
@@ -77,7 +77,7 @@ export const updateLocation = (location) => {
 export const removeLocation = (location) => {
     return async (dispatch) => {
         const deleteLocation = async() => {
-            const url = `/api/locations/${location.id}/${location.email}`
+            const url = `${process.env.REACT_APP_API_URL}/api/locations/${location.id}/${location.email}`
             const {data} = await axios.delete(url)
 
             return data.data

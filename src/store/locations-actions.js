@@ -9,7 +9,7 @@ import axios from "axios";
 export const fetchLocations = (email = "") => {
     return async (dispatch) => {
         const fetchHandler = async () => {
-            const {data} = await axios.get(`/api/locations/${email}`)
+            const {data} = await axios.get(`${process.env.REACT_APP_API_URL}/api/locations/${email}`)
 
             return data.data
         }
@@ -18,7 +18,7 @@ export const fetchLocations = (email = "") => {
             const locations = await fetchHandler()
             dispatch(locationsActions.setLocations(locations))
         }catch(err){
-            if(err.code === "ERR_BAD_RESPONSE"){
+            if(err.code === "ERR_NETWORK"){
                 const backToLogInAction = async () => {
                     await signOut(auth)
                     dispatch(userActions.logOut())
