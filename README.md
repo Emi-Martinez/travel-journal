@@ -31,6 +31,9 @@ You must create a **firebase project** and add the **authentication feature** to
 * Add the [authentication](https://firebase.google.com/docs/auth/web/google-signin#before_you_begin) feature
 * **Copy** your **firebase project api keys** into the file **src/firebase.js**
 
+## API travel-journal
+As the las step to get this app fully functionating in your machine:
+* Install the travel-journal [API](https://github.com/Emi-Martinez/travel-journal-backend)
 
 ## This project was created with create-react-app
 
