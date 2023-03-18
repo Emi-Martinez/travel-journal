@@ -1,4 +1,38 @@
-# Getting Started with Create React App and Redux
+# travel journal
+This app is a intended for you to reggister some places where you have travel.
+Access to the [demo](https://travel-journal-f0167.firebaseapp.com/)
+
+With travel journal you can:
+* Create locations with an image.
+* Update your locations.
+* Delete the locations.
+
+
+## How to use
+To clone and run this application, you will need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/download/) (wich comes whith [npm](https://www.npmjs.com/)) installed in your computer.
+From your command line:
+```bash
+# Clone this repository
+$ git clone https://github.com/Emi-Martinez/travel-journal
+
+# Go into the folder
+$ cd travel-jornal
+
+# Install dependencies
+$ npm install
+
+# Run the app
+$ npm start
+```
+
+## For the log in with Google work out
+You must create a **firebase project** and add the **authentication feature** to it:
+* create a [firebase-project](https://firebase.google.com/docs/web/setup#create-project)
+* add the [authentication](https://firebase.google.com/docs/auth/web/google-signin#before_you_begin) feature
+* **Copy** your **firebase project api keys** into the file **src/firebase.js**
+
+
+## This project was created with create-react-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
